@@ -6,6 +6,8 @@
     "name": "Blazor Static Web App template",
     "description": "A project template for creating a Blazor WebAssembly app and an Azure Function api which will be hosted on Azure Static Web Apps",
     "shortName": "blazorswa",
+    "sourceName": "BlazorSwaTemplate",
+    "preferNameDirectory": true,
     "tags": {
       "language": "C#",
       "type": "project"
