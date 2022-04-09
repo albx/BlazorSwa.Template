@@ -11,5 +11,16 @@
     "tags": {
       "language": "C#",
       "type": "project"
-    }
+    },
+    "sources": [
+      {
+        "modifiers": [
+          {
+            "rename": {
+              "_gitignore": ".gitignore"
+            }
+          }
+        ]
+      }
+    ]
   }
