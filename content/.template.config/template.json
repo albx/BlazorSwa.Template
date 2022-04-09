@@ -1,0 +1,13 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Alberto Mori",
+    "classifications": [ "Web", "Blazor", "WebAssembly", "Azure", "Azure Functions", "Static Web Apps" ],
+    "identity": "BlazorSwa.Template",
+    "name": "Blazor Static Web App template",
+    "description": "A project template for creating a Blazor WebAssembly app and an Azure Function api which will be hosted on Azure Static Web Apps",
+    "shortName": "blazorswa",
+    "tags": {
+      "language": "C#",
+      "type": "project"
+    }
+  }
