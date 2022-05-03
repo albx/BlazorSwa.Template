@@ -7,7 +7,7 @@ A project template for creating a Blazor WebAssembly app and an Azure Function a
 ## Installation
 You can install the package from NuGet using this command from the .NET CLI:
 ```
-dotnet nuget add package BlazorSwa.Template -v 0.1.0
+dotnet new --install BlazorSwa.Template::0.1.0
 ```
 
 ## Usage
