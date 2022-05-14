@@ -15,3 +15,9 @@ Execute the following command from the .NET CLI:
 ```
 dotnet new blazorswa -n <YourProjectName>
 ```
+
+## Contributing
+
+Contributions are always welcome!
+
+If you want to submit any issues or new features, please [follow these few and simple guidelines](CONTRIBUTING.md).
