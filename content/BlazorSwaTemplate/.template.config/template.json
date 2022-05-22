@@ -65,6 +65,18 @@
         ],
         "defaultValue": "Isolated",
         "description": "The type of the Azure Function project"
+      },
+      "InProcess": {
+        "type": "computed",
+        "value": "(api == \"InProcess\")"
+      },
+      "Isolated": {
+        "type": "computed",
+        "value": "(api == \"Isolated\")"
+      },
+      "HostIdentifier": {
+        "type": "bind",
+        "binding": "HostIdentifier"
       }
     }
   }

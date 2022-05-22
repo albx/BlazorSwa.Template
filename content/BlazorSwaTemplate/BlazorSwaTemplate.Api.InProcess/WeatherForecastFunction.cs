@@ -16,7 +16,7 @@ namespace BlazorSwaTemplate.Api.InProcess
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
-        [FunctionName("WeatherForecastFunction")]
+        [FunctionName("WeatherForecast")]
         public static IActionResult Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
             ILogger log)
