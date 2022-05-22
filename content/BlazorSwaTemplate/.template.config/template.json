@@ -14,7 +14,33 @@
     },
     "sources": [
       {
+        "exclude": [
+          "**/[Bb]in/**",
+          "**/[Oo]bj/**",
+          ".template.config/**/*",
+          "**/*.filelist",
+          "**/*.user",
+          "**/*.lock.json"
+        ],
         "modifiers": [
+          {
+            "condition": "(InProcess)",
+            "rename": {
+              "Api.InProcess": "Api"
+            },
+            "exclude": [
+              "BlazorSwaTemplate.Api.Isolated/**"
+            ]
+          },
+          {
+            "condition": "(Isolated)",
+            "rename": {
+              "Api.Isolated": "Api"
+            },
+            "exclude": [
+              "BlazorSwaTemplate.Api.InProcess/**"
+            ]
+          },
           {
             "rename": {
               "_gitignore": ".gitignore"
@@ -22,5 +48,23 @@
           }
         ]
       }
-    ]
+    ],
+    "symbols": {
+      "api": {
+        "type": "parameter",
+        "datatype": "choice",
+        "choices": [
+          {
+            "choice": "InProcess",
+            "description": "Azure Function In-process project"
+          },
+          {
+            "choice": "Isolated",
+            "description": "Azure Function Isolated process project"
+          }
+        ],
+        "defaultValue": "Isolated",
+        "description": "The type of the Azure Function project"
+      }
+    }
   }

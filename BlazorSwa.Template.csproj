@@ -8,7 +8,7 @@
     <Title>Blazor Static Web App Template</Title>
     <Authors>Alberto Mori</Authors>
     <Description>A project template for creating a Blazor WebAssembly app and an Azure Function api which will be hosted on Azure Static Web Apps.</Description>
-    <PackageTags>dotnet-new;templates;blazor;webassembly;azure functions;azure;static web apps;</PackageTags>
+    <PackageTags>dotnet-new;templates;blazor;webassembly;azure-functions;azure;static-web-apps;</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/albx/BlazorSwa.Template</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
