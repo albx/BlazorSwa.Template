@@ -14,15 +14,24 @@
     },
     "sources": [
       {
+        "source": "./",
+        "target": "./",
         "exclude": [
           "**/[Bb]in/**",
           "**/[Oo]bj/**",
           ".template.config/**/*",
           "**/*.filelist",
           "**/*.user",
-          "**/*.lock.json"
+          "**/*.lock.json",
+          ".vs/**"
         ],
         "modifiers": [
+          {
+            "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
+            "exclude": [
+              "*.sln"
+            ]
+          },
           {
             "condition": "(InProcess)",
             "rename": {
