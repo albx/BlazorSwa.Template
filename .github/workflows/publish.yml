@@ -22,4 +22,4 @@ jobs:
     - name: Create nupkg file
       run: dotnet pack -c Release -o . ./${{ env.PROJECT_FILENAME }}
     - name: Publish on NuGet
-      run: dotnet nuget push *.nupkg -k ${{ secrets.NUGET_API_KEY }}
+      run: dotnet nuget push *.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
