@@ -1,31 +1,29 @@
-using BlazorSwaTemplate.Shared;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Functions.Worker;
-using Microsoft.Azure.Functions.Worker.Http;
 using Microsoft.Extensions.Logging;
-using System.Net;
+using BlazorSwaTemplate.Shared;
 
 namespace BlazorSwaTemplate.Api;
 
 public class WeatherForecastFunction
 {
-    private readonly ILogger _logger;
+    private readonly ILogger<WeatherForecastFunction> _logger;
 
     private static readonly string[] Summaries = new[]
     {
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
     };
 
-    public WeatherForecastFunction(ILoggerFactory loggerFactory)
+    public WeatherForecastFunction(ILogger<WeatherForecastFunction> logger)
     {
-        _logger = loggerFactory.CreateLogger<WeatherForecastFunction>();
+        _logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 
     [Function("WeatherForecast")]
-    public async Task<HttpResponseData> Run([HttpTrigger(AuthorizationLevel.Function, "get")] HttpRequestData req)
+    public IActionResult Run([HttpTrigger(AuthorizationLevel.Function, "get")] HttpRequest req)
     {
         _logger.LogInformation("C# HTTP trigger function processed a request.");
-
-        var response = req.CreateResponse(HttpStatusCode.OK);
 
         var forecasts = Enumerable.Range(1, 5).Select(index => new WeatherForecast
         {
@@ -34,7 +32,6 @@ public class WeatherForecastFunction
             Summary = Summaries[Random.Shared.Next(Summaries.Length)]
         }).ToArray();
 
-        await response.WriteAsJsonAsync(forecasts);
-        return response;
+        return new OkObjectResult(forecasts);
     }
 }
