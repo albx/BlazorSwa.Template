@@ -39,6 +39,12 @@
             }
           },
           {
+            "condition": "(!IncludeAzureFunction)",
+            "exclude": [
+              "BlazorSwaTemplate.Api.Isolated/**"
+            ]
+          },
+          {
             "rename": {
               "_gitignore": ".gitignore"
             }
