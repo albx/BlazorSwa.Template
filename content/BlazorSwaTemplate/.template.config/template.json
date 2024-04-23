@@ -33,22 +33,10 @@
             ]
           },
           {
-            "condition": "(InProcess)",
-            "rename": {
-              "Api.InProcess": "Api"
-            },
-            "exclude": [
-              "BlazorSwaTemplate.Api.Isolated/**"
-            ]
-          },
-          {
-            "condition": "(Isolated)",
+            "condition": "(IncludeAzureFunction)",
             "rename": {
               "Api.Isolated": "Api"
-            },
-            "exclude": [
-              "BlazorSwaTemplate.Api.InProcess/**"
-            ]
+            }
           },
           {
             "rename": {
@@ -59,29 +47,12 @@
       }
     ],
     "symbols": {
-      "api": {
+      "IncludeAzureFunction": {
         "type": "parameter",
-        "datatype": "choice",
-        "choices": [
-          {
-            "choice": "InProcess",
-            "description": "Azure Function In-process project"
-          },
-          {
-            "choice": "Isolated",
-            "description": "Azure Function Isolated process project"
-          }
-        ],
-        "defaultValue": "Isolated",
-        "description": "The type of the Azure Function project"
-      },
-      "InProcess": {
-        "type": "computed",
-        "value": "(api == \"InProcess\")"
-      },
-      "Isolated": {
-        "type": "computed",
-        "value": "(api == \"Isolated\")"
+        "datatype": "bool",
+        "defaultValue": "true",
+        "displayName": "Include Azure Function backend project",
+        "description": "Whether to include the Azure Function backend project"
       },
       "HostIdentifier": {
         "type": "bind",
