@@ -1,5 +1,5 @@
 {
-    "$schema": "http://json.schemastore.org/template",
+    "$schema": "https://json.schemastore.org/template",
     "author": "Alberto Mori",
     "classifications": [ "Web", "Blazor", "WebAssembly", "Azure", "Azure Functions", "Static Web Apps" ],
     "identity": "BlazorSwa.Template",
@@ -33,13 +33,16 @@
             ]
           },
           {
-            "condition": "(IncludeAzureFunction)",
+            "condition": "(IncludeApi)",
             "rename": {
               "Api.Isolated": "Api"
-            }
+            },
+            "exclude": [
+              "BlazorSwaTemplate.Client/wwwroot/sample-data/**"
+            ]
           },
           {
-            "condition": "(!IncludeAzureFunction)",
+            "condition": "(!IncludeApi)",
             "exclude": [
               "BlazorSwaTemplate.Api.Isolated/**"
             ]
@@ -53,10 +56,10 @@
       }
     ],
     "symbols": {
-      "IncludeAzureFunction": {
+      "IncludeApi": {
         "type": "parameter",
         "datatype": "bool",
-        "defaultValue": "true",
+        "defaultValue": "false",
         "displayName": "Include Azure Function backend project",
         "description": "Whether to include the Azure Function backend project"
       },
