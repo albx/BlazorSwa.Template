@@ -1,8 +1,8 @@
 # BlazorSwa.Template
-A project template for creating a Blazor WebAssembly app and an Azure Function api which will be hosted on Azure Static Web Apps.
+A project template for creating a Blazor WebAssembly app and, optionally, an Azure Function api which will be hosted on Azure Static Web Apps.
 
 ## Requirements
-.NET 6 SDK with Azure workload and Azure Functions v4 runtime must be installed.
+.NET 8 SDK with Azure workload and Azure Functions v4 runtime must be installed.
 
 ## Installation
 You can install the package from [NuGet](https://www.nuget.org/packages/BlazorSwa.Template/) using this command from the .NET CLI:
@@ -21,16 +21,12 @@ If you prefer Visual Studio to create the project, search *Blazor static web app
 
 ### Options
 The following option is available:
-- **--api Isolated/InProcess**: specifies the Azure function project type (isolated runtime or in process). The default value is **Isolated**.
+- **--include-api**: specifies whether add the azure function project (isolated runtime). The default value is **false**.
 
 ### Examples
 To create a Blazor WebAssembly project with an Azure Function project with isolated runtime, execute the following command from the .NET CLI:
 ```
-dotnet new blazorswa --api Isolated -n <YourProjectName>
-```
-To create a Blazor WebAssembly project with an Azure Function project in process, execute the following command from the .NET CLI:
-```
-dotnet new blazorswa --api InProcess -n <YourProjectName>
+dotnet new blazorswa --include-api -n <YourProjectName>
 ```
 
 ### Some tips
