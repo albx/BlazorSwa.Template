@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <PackageType>Template</PackageType>
     <PackageVersion>0.3.0</PackageVersion>
     <PackageId>BlazorSwa.Template</PackageId>
