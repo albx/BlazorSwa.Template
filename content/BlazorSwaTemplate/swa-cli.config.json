@@ -3,8 +3,14 @@
   "configurations": {
     "BlazorSwaTemplate": {
       "appLocation": "BlazorSwaTemplate.Client",
+      ////#if (IncludeApi)
+      //"apiLocation": "BlazorSwaTemplate.Api",
+      ////#endif
       "outputLocation": "bin\\wwwroot",
       "appBuildCommand": "dotnet publish -c Release -o bin",
+      ////#if (IncludeApi)
+      //"apiBuildCommand": "dotnet publish -c Release",
+      ////#endif
       "run": "dotnet watch run",
       "appDevserverUrl": "http://localhost:5110"
     }
