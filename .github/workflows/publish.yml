@@ -5,7 +5,7 @@ on:
     branches: [ main ]
 
 env:
-  DOTNET_VERSION: 6.x
+  DOTNET_VERSION: 8.x
   PROJECT_FILENAME: BlazorSwa.Template.csproj
 
 jobs:
