@@ -6,24 +6,17 @@ using BlazorSwaTemplate.Shared;
 
 namespace BlazorSwaTemplate.Api;
 
-public class WeatherForecastFunction
+public class WeatherForecastFunction(ILogger<WeatherForecastFunction> logger)
 {
-    private readonly ILogger<WeatherForecastFunction> _logger;
-
-    private static readonly string[] Summaries = new[]
-    {
+    private static readonly string[] Summaries =
+    [
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    };
-
-    public WeatherForecastFunction(ILogger<WeatherForecastFunction> logger)
-    {
-        _logger = logger ?? throw new ArgumentNullException(nameof(logger));
-    }
+    ];
 
     [Function("WeatherForecast")]
     public IActionResult Run([HttpTrigger(AuthorizationLevel.Function, "get")] HttpRequest req)
     {
-        _logger.LogInformation("C# HTTP trigger function processed a request.");
+        logger.LogInformation("C# HTTP trigger function processed a request.");
 
         var forecasts = Enumerable.Range(1, 5).Select(index => new WeatherForecast
         {

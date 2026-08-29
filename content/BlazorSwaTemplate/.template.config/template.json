@@ -29,22 +29,25 @@
           {
             "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
             "exclude": [
-              "*.sln"
+              "*.slnx"
             ]
           },
           {
             "condition": "(IncludeApi)",
             "rename": {
-              "Api.Isolated": "Api"
+              "Api.Isolated": "Api",
+              ".WithApi.slnx": ".slnx"
             },
             "exclude": [
-              "BlazorSwaTemplate.Client/wwwroot/sample-data/**"
+              "BlazorSwaTemplate.Client/wwwroot/sample-data/**",
+              "BlazorSwaTemplate.slnx"
             ]
           },
           {
             "condition": "(!IncludeApi)",
             "exclude": [
-              "BlazorSwaTemplate.Api.Isolated/**"
+              "BlazorSwaTemplate.Api.Isolated/**",
+              "BlazorSwaTemplate.WithApi.slnx"
             ]
           },
           {
