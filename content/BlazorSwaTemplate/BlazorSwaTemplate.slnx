@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="BlazorSwaTemplate.Client/BlazorSwaTemplate.Client.csproj" />
+  <Project Path="BlazorSwaTemplate.Shared/BlazorSwaTemplate.Shared.csproj" />
+</Solution>

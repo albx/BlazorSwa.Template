@@ -2,7 +2,7 @@
 A project template for creating a Blazor WebAssembly app and, optionally, an Azure Function api which will be hosted on Azure Static Web Apps.
 
 ## Requirements
-.NET 8 SDK with Azure workload and Azure Functions v4 runtime must be installed.
+.NET 10 SDK with Azure workload and Azure Functions v4 runtime must be installed.
 
 In order to run locally your project, you can install the **Azure Static Web Apps CLI** following the instructions in the [official documentation](https://azure.github.io/static-web-apps-cli/docs/use/install).
 
